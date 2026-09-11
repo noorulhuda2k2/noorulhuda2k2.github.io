@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Noor Ul Huda Khan's portfolio - AI researcher, data scientist, and AI developer.">
+	<title>Noor Ul Huda Khan | AI Researcher & Data Scientist</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
+	<style>
+		:root {
+			--ink: #eefcff;
+			--muted: #8da4ae;
+			--paper: #080c14;
+			--paper-deep: #111a25;
+			--sage: #a7ff3f;
+			--green: #00e5ff;
+			--yellow: #ff4fd8;
+			--line: rgba(167, 255, 63, .22);
+			--display: "Space Grotesk", sans-serif;
+			--mono: "DM Mono", monospace;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: 0;
+			color: var(--ink);
+			background: radial-gradient(circle at 85% 4%, rgba(0, 229, 255, .1), transparent 25rem), var(--paper);
+			font-family: var(--display);
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		.container {
+			width: min(1120px, calc(100% - 48px));
+			margin: 0 auto;
+		}
+
+		.eyebrow {
+			color: var(--green);
+			font: 500 .75rem var(--mono);
+			letter-spacing: .12em;
+			text-transform: uppercase;
+		}
+
+		header {
+			padding: 22px 0;
+			position: sticky;
+			top: 0;
+			z-index: 10;
+			background: rgba(8, 12, 20, .88);
+			border-bottom: 1px solid rgba(0, 229, 255, .2);
+			backdrop-filter: blur(14px);
+		}
+
+		.nav {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+		}
+
+		.brand {
+			font-size: 1.1rem;
+			font-weight: 800;
+			letter-spacing: -.04em;
+		}
+
+		.nav .brand {
+			position: absolute;
+			left: 0;
+		}
+
+		.brand span {
+			color: var(--green);
+		}
+
+		.nav-links {
+			display: flex;
+			gap: 30px;
+			align-items: center;
+			font-size: .85rem;
+			font-weight: 700;
+		}
+
+		.nav-links a {
+			transition: color .2s ease;
+		}
+
+		.nav-links a:hover {
+			color: var(--green);
+		}
+
+		.nav-cta {
+			border-bottom: 1px solid var(--ink);
+			padding-bottom: 4px;
+		}
+
+		.menu-button {
+			display: none;
+			border: 0;
+			background: transparent;
+			color: var(--ink);
+			font: 500 .8rem var(--mono);
+			cursor: pointer;
+		}
+
+		.hero {
+			min-height: 0;
+			display: grid;
+			grid-template-columns: 1.06fr .94fr;
+			align-items: center;
+			gap: 50px;
+			padding: 0px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hero::after {
+			content: "";
+			width: 340px;
+			height: 340px;
+			background: var(--green);
+			border-radius: 50%;
+			position: absolute;
+			right: -145px;
+			top: 60px;
+			opacity: .14;
+			filter: blur(18px);
+			z-index: -1;
+		}
+
+		h1,
+		h2,
+		p {
+			margin-top: 0;
+		}
+
+		h1 {
+			font-size: clamp(3.5rem, 7.4vw, 6.5rem);
+			line-height: .94;
+			letter-spacing: -.07em;
+			max-width: 720px;
+			margin-bottom: 32px;
+			text-transform: uppercase;
+			text-shadow: 0 0 28px rgba(0, 229, 255, .16);
+		}
+
+		h1 em {
+			color: var(--green);
+			font-style: normal;
+		}
+
+		.hero-copy {
+			max-width: 475px;
+			color: var(--muted);
+			font-size: 1.05rem;
+			line-height: 1.75;
+		}
+
+		.hero-actions {
+			display: flex;
+			align-items: center;
+			gap: 26px;
+			margin-top: 38px;
+		}
+
+		.button {
+			display: inline-flex;
+			align-items: center;
+			gap: 12px;
+			background: var(--green);
+			color: #031018;
+			padding: 15px 20px;
+			border-radius: 2px;
+			font-weight: 700;
+			font-size: .85rem;
+			transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+		}
+
+		.button:hover {
+			background: var(--sage);
+			transform: translateY(-3px);
+			box-shadow: 0 0 24px rgba(0, 229, 255, .3);
+		}
+
+		.text-link {
+			font: 500 .78rem var(--mono);
+			border-bottom: 1px solid var(--ink);
+			padding-bottom: 5px;
+		}
+
+		.portrait-wrap {
+			position: relative;
+			width: min(115%, 560px);
+			max-height: 100%;
+			justify-self: end;
+		}
+
+		.portrait {
+			aspect-ratio: 3 / 4;
+			overflow: visible;
+			position: relative;
+		}
+
+		.portrait::before {
+			content: "";
+			position: absolute;
+			inset: 8% 16% 6%;
+			background: radial-gradient(ellipse at center, rgba(0, 229, 255, .2), transparent 65%);
+			filter: blur(16px);
+			z-index: -1;
+		}
+
+		.portrait img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: center;
+			filter: drop-shadow(0 0 2px rgba(0, 229, 255, .95)) drop-shadow(0 0 7px rgba(0, 229, 255, .8)) drop-shadow(0 0 15px rgba(167, 255, 63, .42)) drop-shadow(0 22px 18px rgba(0, 0, 0, .35)) saturate(1.08) contrast(1.03);
+		}
+
+		.section {
+			padding: 72px 0;
+			border-top: 1px solid var(--line);
+		}
+
+		.section-heading {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			gap: 30px;
+			margin-bottom: 50px;
+		}
+
+		h2 {
+			font-size: clamp(2rem, 4vw, 3.2rem);
+			letter-spacing: -.07em;
+			line-height: 1;
+			margin-bottom: 0;
+		}
+
+		.section-note {
+			color: var(--muted);
+			max-width: 275px;
+			font-size: .9rem;
+			line-height: 1.6;
+		}
+
+		.work-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 18px;
+		}
+
+		.project-group + .project-group {
+			margin-top: 52px;
+		}
+
+		.project-group-heading {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			margin: 0 0 18px;
+			color: var(--ink);
+			font-size: 1rem;
+			font-weight: 700;
+		}
+
+		.project-group-heading::after {
+			content: "";
+			height: 1px;
+			flex: 1;
+			background: var(--line);
+		}
+
+		.project-status {
+			color: var(--green);
+			font: 500 .68rem var(--mono);
+			letter-spacing: .08em;
+			text-transform: uppercase;
+		}
+
+		.project {
+			display: block;
+			padding: 26px;
+			min-height: 292px;
+			background: linear-gradient(145deg, rgba(17, 26, 37, .96), rgba(8, 12, 20, .96));
+			border: 1px solid rgba(141, 164, 174, .2);
+			border-radius: 10px;
+			position: relative;
+			overflow: hidden;
+			transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+		}
+
+		.project::before {
+			content: "";
+			position: absolute;
+			inset: 0 0 auto;
+			height: 2px;
+			background: var(--green);
+			transform: scaleX(.25);
+			transform-origin: left;
+			transition: transform .25s ease;
+		}
+
+		.project:hover {
+			border-color: rgba(0, 229, 255, .65);
+			box-shadow: 0 14px 30px rgba(0, 0, 0, .2);
+			transform: translateY(-4px);
+		}
+
+		.project:hover::before {
+			transform: scaleX(1);
+		}
+
+		.project-visual {
+			position: relative;
+			height: 128px;
+			margin: -26px -26px 24px;
+			overflow: hidden;
+			background: var(--paper-deep);
+		}
+
+		.project-image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: .7;
+			filter: saturate(.8);
+			transition: transform .4s ease, opacity .4s ease;
+		}
+
+		.project:hover .project-image {
+			transform: scale(1.05);
+			opacity: .9;
+		}
+
+		.project-number {
+			position: absolute;
+			top: 18px;
+			left: 20px;
+			color: var(--muted);
+			font: .72rem var(--mono);
+			text-shadow: 0 1px 8px rgba(0, 0, 0, .8);
+		}
+
+		.project-arrow {
+			position: absolute;
+			top: 15px;
+			right: 20px;
+			color: var(--green);
+			font-size: 1.25rem;
+			text-shadow: 0 1px 8px rgba(0, 0, 0, .8);
+		}
+
+		.project-meta {
+			display: block;
+			padding: 0;
+			border: 0;
+			margin: 0;
+		}
+
+		.project-title {
+			display: block;
+			font-size: 1.3rem;
+			font-weight: 800;
+			margin-bottom: 10px;
+		}
+
+		.project-type {
+			display: block;
+			color: var(--green);
+			font: .72rem var(--mono);
+			text-transform: uppercase;
+			letter-spacing: .04em;
+			margin-bottom: 14px;
+		}
+
+		.project-description {
+			color: var(--muted);
+			font-size: .88rem;
+			line-height: 1.65;
+			margin: 0;
+		}
+
+		.project-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 7px;
+			margin-top: 22px;
+		}
+
+		.project-tags span {
+			padding: 6px 9px;
+			border: 1px solid rgba(141, 164, 174, .2);
+			border-radius: 4px;
+			color: var(--muted);
+			font: .66rem var(--mono);
+		}
+
+		.project-footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 16px;
+			margin-top: 22px;
+		}
+
+		.github-button {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 9px 12px;
+			border: 1px solid rgba(0, 229, 255, .45);
+			border-radius: 4px;
+			color: var(--ink);
+			font: 500 .7rem var(--mono);
+			transition: background .2s ease, color .2s ease;
+		}
+
+		.github-button:hover {
+			background: var(--green);
+			color: #031018;
+		}
+
+		.about {
+			display: grid;
+			grid-template-columns: .35fr 1.65fr;
+			gap: 44px;
+		}
+
+		.about.reveal {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.about>div:nth-child(2) {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 28px 34px;
+		}
+
+		.about-copy {
+			font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+			line-height: 1.6;
+			letter-spacing: 0;
+			max-width: none;
+			margin-bottom: 0;
+		}
+
+		.about-copy strong {
+			color: var(--green);
+			font-weight: 700;
+		}
+
+		.about-details {
+			display: grid;
+			grid-column: 1 / -1;
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			gap: 22px;
+			margin-top: 2px;
+		}
+
+		.detail {
+			padding-top: 14px;
+			border-top: 1px solid var(--line);
+			color: var(--muted);
+			font-size: .78rem;
+			line-height: 1.7;
+		}
+
+		.detail strong {
+			display: block;
+			color: var(--ink);
+			margin-bottom: 6px;
+			font-size: .75rem;
+			font-family: var(--mono);
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+
+		.education-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 24px;
+		}
+
+		.education-card,
+		.research-card {
+			padding: 28px;
+			border: 1px solid var(--line);
+			background: rgba(17, 26, 37, .72);
+		}
+
+		.education-card h3,
+		.research-card h3 {
+			margin: 12px 0 10px;
+			font-size: 1.45rem;
+		}
+
+		.education-card p,
+		.research-card p {
+			color: var(--muted);
+			line-height: 1.7;
+			margin-bottom: 0;
+		}
+
+		.education-meta {
+			display: flex;
+			justify-content: space-between;
+			gap: 20px;
+			color: var(--green);
+			font: .72rem var(--mono);
+			text-transform: uppercase;
+		}
+
+		.research-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 18px;
+		}
+
+		.research-card {
+			min-height: 220px;
+		}
+
+		.research-card h3 {
+			font-size: 1.15rem;
+		}
+
+		.contact {
+			background: linear-gradient(135deg, #092b35, #121334);
+			color: var(--ink);
+			padding: 110px 0;
+			border-top: 1px solid var(--green);
+		}
+
+		.contact .eyebrow {
+			color: var(--sage);
+		}
+
+		.contact-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: 50px;
+		}
+
+		.contact h2 {
+			max-width: 920px;
+			margin-top: 22px;
+		}
+
+		.contact-intro {
+			width: min(100%, 980px);
+		}
+
+		.contact-copy {
+			max-width: 900px;
+			margin-bottom: 0;
+			color: var(--muted);
+			font-size: 1.05rem;
+			line-height: 1.7;
+		}
+
+		.contact .button {
+			background: var(--yellow);
+			color: #160b1a;
+		}
+
+		.contact-links {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 12px;
+		}
+
+		.contact-links .button {
+			background: transparent;
+			color: var(--ink);
+			border: 1px solid var(--green);
+		}
+
+		.contact-links .button:hover {
+			background: var(--green);
+			color: #031018;
+		}
+
+		.contact .button:hover {
+			background: var(--sage);
+		}
+
+		footer {
+			padding: 25px 0;
+			display: flex;
+			justify-content: space-between;
+			color: var(--muted);
+			font: .68rem var(--mono);
+			text-transform: uppercase;
+		}
+
+		.reveal {
+			opacity: 0;
+			transform: translateY(22px);
+			transition: opacity .7s ease, transform .7s ease;
+		}
+
+		.reveal.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		@media (max-width: 720px) {
+			.container {
+				width: min(100% - 36px, 560px);
+			}
+
+			header {
+				padding: 22px 0;
+			}
+
+			.menu-button {
+				display: block;
+			}
+
+			.nav-links {
+				display: none;
+				position: absolute;
+				top: 70px;
+				left: 18px;
+				right: 18px;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 18px;
+				padding: 22px;
+				background: var(--paper);
+				border: 1px solid var(--line);
+				box-shadow: 0 15px 30px rgba(29, 38, 34, .08);
+			}
+
+			.nav-links.open {
+				display: flex;
+			}
+
+			.hero {
+				min-height: auto;
+				grid-template-columns: 1fr;
+				gap: 34px;
+				padding: 36px 0 58px;
+			}
+
+			h1 {
+				font-size: clamp(3.2rem, 16vw, 5rem);
+			}
+
+			.portrait-wrap {
+				width: 100%;
+				max-width: 560px;
+				justify-self: start;
+			}
+
+			.section {
+				padding: 56px 0;
+			}
+
+			.section-heading,
+			.contact-content {
+				display: block;
+			}
+
+			.section-note {
+				margin-top: 18px;
+			}
+
+			.work-grid {
+				grid-template-columns: 1fr;
+				gap: 42px;
+			}
+
+			.about {
+				grid-template-columns: 1fr;
+				gap: 30px;
+			}
+
+			.about>div:nth-child(2) {
+				display: block;
+			}
+
+			.about-details {
+				gap: 18px;
+			}
+
+			.education-grid,
+			.research-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.contact .button {
+				margin-top: 35px;
+			}
+
+			footer {
+				gap: 20px;
+				flex-direction: column;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav class="nav container" aria-label="Main navigation">
+			<a class="brand" href="#top">Noor Ul Huda Khan<span>.</span></a>
+			<button class="menu-button" aria-expanded="false" aria-controls="nav-links">MENU +</button>
+			<div class="nav-links" id="nav-links">
+				<!-- <a href="#top">Introduction</a> -->
+				<a href="#about">About</a>
+				<a href="#projects">Projects</a>
+				<a href="#education">Education</a>
+				<a href="#research">Research</a>
+				<a class="nav-cta" href="#contact">Contact me <span aria-hidden="true">↗</span></a>
+			</div>
+		</nav>
+	</header>
+
+	<main id="top">
+		<section class="hero container">
+			<div class="reveal">
+				<div class="eyebrow">AI Researcher • Data Scientist • AI Developer</div>
+				<h1>Noor Ul Huda <em>Khan.</em></h1>
+				<p class="hero-copy">Researching the future of AI. Building solutions for real-world problems.</p>
+				<p class="hero-copy">I work at the intersection of <strong>AI research and practical
+						engineering</strong>, building intelligent systems with Machine Learning, Generative AI, RAG,
+					and Agentic AI.</p>
+				<div class="hero-actions">
+					<a class="button" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
+					<a class="text-link" href="#contact">Open to opportunities</a>
+				</div>
+			</div>
+			<div class="portrait-wrap reveal">
+				<div class="portrait">
+					<img src="images/Portfolio.png" alt="Portrait of Noor Ul Huda Khan wearing a blue suit">
+				</div>
+			</div>
+		</section>
+
+		<section class="section container" id="about">
+
+			<div class="about reveal">
+				<div class="eyebrow">A little about me</div>
+				<div>
+					<p class="about-copy">
+						I’m <strong>Noor Ul Huda Khan</strong>, a Data Science and AI Developer
+						and Researcher focused on building intelligent systems for real-world
+						and industrial challenges.
+					</p>
+
+					<p class="about-copy">
+						My work combines <strong>AI research, software engineering, and data</strong>
+						to turn ideas into useful models, applications, and actionable insights.
+					</p>
+
+					<div class="about-details">
+
+						<p class="detail">
+							<strong>Currently</strong>
+							MS Data Science · NUST<br>
+							Researching Agentic AI & Generative AI
+						</p>
+
+						<p class="detail">
+							<strong>Focus</strong>
+							Machine Learning · Generative AI<br>
+							RAG · Agentic AI · Data Science<br>
+							Recommendation Systems · NLP
+						</p>
+
+						<p class="detail">
+							<strong>Building</strong>
+							AI-powered applications<br>
+							Intelligent & practical solutions
+						</p>
+
+						<p class="detail">
+							<strong>Toolkit</strong>
+							Python · PyTorch · TensorFlow<br>
+							Scikit-learn · LangChain · LangGraph<br>
+							Web and Android Frameworks · JavaScript
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section container" id="projects">
+			<div class="section-heading reveal">
+				<h2>Selected projects</h2>
+				<p class="section-note">A few experiments in machine learning, analytics, and building useful tools from
+					messy information.</p>
+			</div>
+			<div class="project-group">
+				<h3 class="project-group-heading"><span class="project-status">01</span> Completed</h3>
+				<div class="work-grid">
+				<article class="project reveal">
+					<div class="project-visual"><img class="project-image" src="images/002.png" alt="Data visualization dashboard"><span class="project-number">01 / DATA</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+					<div class="project-meta"><span class="project-type">Information Retreival · 2026</span><span class="project-title">Scholorly Search Engine</span>
+						<p class="project-description">An AI-powered scholarly search engine combining keyword and semantic search for academic papers. Uses Qdrant and SQLite with a RAG pipeline to generate concise LLM-powered paper summaries.</p>
+						<div class="project-tags"><span>Python</span><span>Streamlit</span><span>RAG</span><span>Gen AI</span></div>
+						<div class="project-footer"><span class="project-number">CASE STUDY</span><a class="github-button" href="https://github.com/noorulhuda2k2/Scholor-Search-Engine" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
+					</div>
+				</article>
+				<article class="project reveal">
+					<div class="project-visual"><img class="project-image" src="images/8901671.jpg " alt="Laptop showing code in a dark workspace"><span class="project-number">04 / NLP</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+					<div class="project-meta"><span class="project-type">MERN Web App · 2024</span><span class="project-title">E Commerce Application</span>
+						<p class="project-description">A full-stack e-commerce application built with the MERN stack for seamless online shopping. Features a React frontend with a Node.js/Express backend and database integration for managing products and users.</p>
+						<div class="project-tags"><span>WEB</span><span>MERN</span><span>E Commerce</span></div>
+						<div class="project-footer"><span class="project-number">CASE STUDY</span><a class="github-button" href="https://github.com/noorulhuda2k2/ecommerceMERNApp" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
+					</div>
+				</article>
+				</div>
+			</div>
+			<div class="project-group">
+				<h3 class="project-group-heading"><span class="project-status">02</span> In progress</h3>
+				<div class="work-grid">
+				<article class="project reveal">
+					<div class="project-visual"><img class="project-image" src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1000&q=85" alt="Abstract network of connected data points"><span class="project-number">02 / ML</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+					<div class="project-meta"><span class="project-type">Machine learning · 2026</span><span class="project-title">Student Success Predictor</span>
+						<p class="project-description">A predictive model that helps identify patterns behind student outcomes and support early intervention.</p>
+						<div class="project-tags"><span>Scikit-learn</span><span>Prediction</span><span>Python</span></div>
+						<div class="project-footer"><span class="project-number">CASE STUDY</span><a class="github-button" href="https://github.com/noorulhuda2k2" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
+					</div>
+				</article>
+				<article class="project reveal">
+					<div class="project-visual"><img class="project-image" src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1000&q=85" alt="Mathematical formulas on a glass board"><span class="project-number">03 / STATS</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+					<div class="project-meta"><span class="project-type">Python · Agentic AI · 2026</span><span class="project-title">AI Resume Analyzer</span>
+						<p class="project-description">Developed an AI-powered Resume Analyzer using LangChain, LangGraph, Groq, FastAPI and Streamlit. Implemented ATS scoring, skill-gap analysis, keyword extraction and resume recommendations.</p>
+						<div class="project-tags"><span>Generative AI</span><span>Agentic AI</span><span>Analyzer</span><span>Mobile APP</span></div>
+						<div class="project-footer"><span class="project-number">CASE STUDY</span><a class="github-button" href="https://github.com/noorulhuda2k2" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
+					</div>
+				</article>
+			</div>
+			</div>
+		</section>
+
+
+		
+		<section class="section container" id="education">
+			<div class="section-heading reveal">
+				<h2>Education</h2>
+				<p class="section-note">Building the theory and practical habits behind responsible AI.</p>
+			</div>
+			<div class="education-grid">
+				<div class="education-card reveal">
+					<div class="education-meta"><span>Master’s degree</span><span>2025 - Present</span></div>
+					<h3>Master’s in Data Science</h3>
+					<p>SEECS, NUST Islamabad</p>
+				</div>
+				<div class="education-card reveal">
+					<div class="education-meta"><span>Bachelor’s degree</span><span>2020 - 2024</span></div>
+					<h3>Bachelor’s in Information Technology</h3>
+					<p>University of Mianwali</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section container" id="research">
+			<div class="section-heading reveal">
+				<h2>Research</h2>
+				<p class="section-note">Questions I’m exploring through coursework, reading, and small experiments.</p>
+			</div>
+			<div class="research-grid">
+				<article class="research-card reveal">
+					<div class="eyebrow">01 / Explainability</div>
+					<h3>Can models explain themselves?</h3>
+					<p>Exploring ways to make model predictions easier for people to understand and question.</p>
+				</article>
+				<article class="research-card reveal">
+					<div class="eyebrow">02 / NLP</div>
+					<h3>Finding signal in language</h3>
+					<p>Studying how text features, embeddings, and context can support better classification.</p>
+				</article>
+				<article class="research-card reveal">
+					<div class="eyebrow">03 / Ethics</div>
+					<h3>Data with responsibility</h3>
+					<p>Learning how bias, privacy, and dataset quality shape the systems we build.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="contact" id="contact">
+			<div class="container contact-content reveal">
+				<div class="contact-intro">
+					<div class="eyebrow">Let’s connect</div>
+					<h2>Have a problem worth solving?<br>Let’s turn it into an intelligent solution.</h2>
+					<p class="contact-copy">I’m interested in ideas that go beyond demos—AI systems that solve meaningful problems, improve workflows, and create real-world value. Whether you're looking for collaboration, research, or development, let's start a conversation.</p>
+				</div>
+				<div class="contact-links">
+					<a class="button" href="https://www.linkedin.com/in/noor-ul-huda-khan-0b7a87270/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+					<a class="button" href="https://github.com/noorulhuda2k2" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+					<a class="button" href="mailto:noorulhuda2k2@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="container"><span>© <span id="year"></span> Noor Ul Huda Khan</span><span>Built with curiosity</span>
+	</footer>
+	<script>
+		const menuButton = document.querySelector('.menu-button');
+		const navLinks = document.querySelector('#nav-links');
+		document.querySelector('#year').textContent = new Date().getFullYear();
+		menuButton.addEventListener('click', () => {
+			const isOpen = navLinks.classList.toggle('open');
+			menuButton.setAttribute('aria-expanded', isOpen);
+			menuButton.textContent = isOpen ? 'CLOSE −' : 'MENU +';
+		});
+
+		navLinks.querySelectorAll('a').forEach((link) => {
+			link.addEventListener('click', () => {
+				navLinks.classList.remove('open');
+				menuButton.setAttribute('aria-expanded', 'false');
+				menuButton.textContent = 'MENU +';
+			});
+		});
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.12 });
+		document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+	</script>
+</body>
+
+</html>
